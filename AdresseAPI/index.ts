@@ -7,10 +7,21 @@ interface Dic {
 
 interface Provider {
     name: string,
-    city: string,
-    postcode: string
-    // x : number,
-    // y: number
+    street: string,
+    locality: string,
+    postalcode: string,
+    addendum: Addendum,
+    housenumber: string,
+    country: string,
+    label: string
+}
+
+interface Addendum{
+    pad: Pad
+}
+
+interface Pad{
+    bbl: string
 }
 
 export class AdresseAPI implements ComponentFramework.StandardControl<IInputs, IOutputs> {
@@ -30,6 +41,18 @@ export class AdresseAPI implements ComponentFramework.StandardControl<IInputs, I
     private _address_line_1: string;
     
     private _city: string;
+
+    private _street:string;
+
+    private _bbl: string;
+
+    private _housenumber: string;
+
+    private _label: string;
+
+    //private _latitude: string;
+
+    //private _longitude: string;
 
     private _postcode: string;
     
@@ -167,7 +190,7 @@ export class AdresseAPI implements ComponentFramework.StandardControl<IInputs, I
             
 
         this._value = this.inputElement.value;
-        var url = 'https://api-adresse.data.gouv.fr/search/?q=' + encodeURIComponent(this._value);
+        var url = 'https://geosearch.planninglabs.nyc/v2/autocomplete?text=' + encodeURIComponent(this._value);
         var key: any;
         var self = this;
         $.getJSON(
@@ -228,10 +251,13 @@ export class AdresseAPI implements ComponentFramework.StandardControl<IInputs, I
                 this._value = obj.name;
                 this._address_line_1 = obj.name;
                 this.inputElement.value = obj.name;
-                this._city = obj.city;
-                this._postcode = obj.postcode;
-                // this._latitude = obj.x;
-                // this._longitude = obj.y;
+                this._city = obj.locality;
+                this._street = obj.street;
+                this._bbl = obj.addendum.pad.bbl;
+                this._housenumber = obj.housenumber;
+                this._postcode = obj.postalcode;
+                this._country = obj.country;
+                this._label = obj.label;
                 this._notifyOutputChanged();
             }
                 
@@ -263,8 +289,12 @@ export class AdresseAPI implements ComponentFramework.StandardControl<IInputs, I
     {
         return {
             address_line_1: this._address_line_1,
+            street : this._street,
             city: this._city,
             postcode: this._postcode,
+            housenumber : this._housenumber,
+            bbl : this._bbl,
+            label : this._label,
             // latitude: this._latitude,
             // longitude: this._longitude,
             country: this._country

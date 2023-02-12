@@ -3,11 +3,16 @@
   <control namespace="AdresseAPI" constructor="AdresseAPI" version="0.0.4" display-name-key="AdresseAPI" description-key="AdresseAPI description" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="address_line_1" display-name-key="address_line_1" description-key="address_line_1" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="housenumber" display-name-key="housenumber" description-key="housenumber" of-type="SingleLine.Text" usage="bound" required="true"/>
+    <property name="street" display-name-key="street" description-key="street" of-type="SingleLine.Text" usage="bound" required="true"/>
+
     <property name="city" display-name-key="city" description-key="city" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="postcode" display-name-key="postcode" description-key="postcode" of-type="SingleLine.Text" usage="bound" required="true" />
     <!-- <property name="longitude" display-name-key="longitude" description-key="longitude" of-type="FP" usage="bound" required="true" />
     <property name="latitude" display-name-key="latitude" description-key="latitude" of-type="FP" usage="bound" required="true" /> -->
+    <property name="bbl" display-name-key="bbl" description-key="bbl" of-type="SingleLine.Text" usage="bound" required="true"/>  
     <property name="country" display-name-key="country" description-key="country" of-type="SingleLine.Text" usage="bound" required="false" />
+    <property name="label" display-name-key="label" description-key="label" of-type="SingleLine.Text" usage="bound" required="false" />
     <resources>
       <code path="index.ts" order="1" />
       <css path="css/style.css" order="1" />
