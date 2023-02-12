@@ -1,8 +1,8 @@
 # AdresseAPI
  
-Custom Control for the NYC GeoSearch address https://geosearch.planninglabs.nyc/.
+Custom Control for the NYC GeoSearch address API https://geosearch.planninglabs.nyc/.
 
-Control is applied on a singleline text and acts as an autocomplete control. It displays results from NYC GeoSearch address. When an address is selected, following attributes can be mapped to table columns :
+Control is applied on a Singleline text and acts as an autocomplete control. It displays results from NYC GeoSearch address. When an address is selected, following attributes can be mapped to table columns :
 Street Line (ex : BOWERY)
 Street Number (ex: 85)
 City, (ex: New York)
@@ -24,4 +24,4 @@ Installation step by step :
 
 # Demo 
 
-![alt text](img/screen.gif)
+![alt text](img/demo.png)
