@@ -1,4 +1,4 @@
-# AdresseAPI
+# PCF NYC GeoSearch Adress API
  
 Custom Control for the NYC GeoSearch address API https://geosearch.planninglabs.nyc/.
 
