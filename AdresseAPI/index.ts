@@ -21,7 +21,8 @@ interface Addendum{
 }
 
 interface Pad{
-    bbl: string
+    bbl: string,
+    bin: string
 }
 
 export class AdresseAPI implements ComponentFramework.StandardControl<IInputs, IOutputs> {
@@ -45,6 +46,8 @@ export class AdresseAPI implements ComponentFramework.StandardControl<IInputs, I
     private _street:string;
 
     private _bbl: string;
+
+    private _bin: string;
 
     private _housenumber: string;
 
@@ -254,6 +257,7 @@ export class AdresseAPI implements ComponentFramework.StandardControl<IInputs, I
                 this._city = obj.locality;
                 this._street = obj.street;
                 this._bbl = obj.addendum.pad.bbl;
+                this._bin = obj.addendum.pad.bin;
                 this._housenumber = obj.housenumber;
                 this._postcode = obj.postalcode;
                 this._country = obj.country;
@@ -294,6 +298,7 @@ export class AdresseAPI implements ComponentFramework.StandardControl<IInputs, I
             postcode: this._postcode,
             housenumber : this._housenumber,
             bbl : this._bbl,
+            bin : this._bin,
             label : this._label,
             // latitude: this._latitude,
             // longitude: this._longitude,

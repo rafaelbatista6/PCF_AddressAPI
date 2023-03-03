@@ -10,6 +10,7 @@ Control is applied on a Singleline text and acts as an autocomplete control. It 
 5 - Country, (ex: United States)  
 6 - Full Address Label, (ex: 85 BOWERY, New York, NY, USA)  
 7 - BBL code (Borough 1-digit, Block 5-digit, Lot 4-digit) (ex : 1003030011)  
+8 - BIN number
 
 Installation step by step : 
 
